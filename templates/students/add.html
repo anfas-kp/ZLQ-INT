@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8 col-xl-7">
+        <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+                <h2 class="mb-4">Add Student</h2>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter age" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="student@example.com">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone number">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="course" class="form-label">Course</label>
+                        <input type="text" class="form-control" id="course" name="course" placeholder="Enter course name">
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="address" class="form-label">Address</label>
+                        <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter address"></textarea>
+                    </div>
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary">Save Student</button>
+                        <a href="{% url 'student_list' %}" class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
