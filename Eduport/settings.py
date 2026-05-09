@@ -22,7 +22,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
-    'students.apps.StudentsConfig',  # your app
+    'students.apps.StudentsConfig',
+    'courses', 
 ]
 
 
