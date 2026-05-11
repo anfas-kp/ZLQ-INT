@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">All Courses</h5>
+        <a href="{% url 'add_course' %}" class="btn btn-light btn-sm">Add New Course</a>
+    </div>
+    <div class="card-body">
+        {% if courses %}
+        <ul class="list-group list-group-flush">
+            {% for course in courses %}
+            <li class="list-group-item">
+                <h6 class="mb-0">{{ course.title }}</h6>
+                <small class="text-muted">Duration: {{ course.duration }}</small>
+            </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p class="text-muted mb-0">No courses available yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
